@@ -1,3 +1,14 @@
+This is an example of an eDetailer kiosk app using React and Redux (timeout implementation) and  Electron. It  has some interactive popups and  some animations.
+
+I've blurred the client's logo and taken out the holding video. Click the (empty screen at the beginning to enter the app).
+
+It is using yarn.
+
+run `yarn` to install all dependencies and `yarn build` to get a built `.exe`.
+
+Run the resulted `eDetailer.exe` located at `/dist/win-unpacked`.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
