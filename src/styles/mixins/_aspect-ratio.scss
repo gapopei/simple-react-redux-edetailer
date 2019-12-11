@@ -1,0 +1,51 @@
+@mixin aspect-ratio($width, $height) {
+  padding-bottom: percentage(1 / ($width / $height));
+}
+
+.aspect-ratio {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+
+  & > .content {
+    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    
+    & > .center {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  &.ar{
+    &11   { @include aspect-ratio( 1,  1); }
+    &12   { @include aspect-ratio( 1,  2); }
+    &21   { @include aspect-ratio( 2,  1); }
+    &23   { @include aspect-ratio( 2,  3); }
+    &29   { @include aspect-ratio( 2,  9); }
+    &32   { @include aspect-ratio( 3,  2); }
+    &34   { @include aspect-ratio( 3,  4); }
+    &35   { @include aspect-ratio( 3,  5); }
+    &43   { @include aspect-ratio( 4,  3); }
+    &45   { @include aspect-ratio( 4,  5); }
+    &53   { @include aspect-ratio( 5,  3); }  
+    &54   { @include aspect-ratio( 5,  4); }
+    &92   { @include aspect-ratio( 9, 2);  }
+    &916  { @include aspect-ratio( 9, 16); }
+    &921  { @include aspect-ratio( 9, 21); }
+    &1016 { @include aspect-ratio(10, 16); }
+    &169  { @include aspect-ratio(16,  9); }
+    &1610 { @include aspect-ratio(16, 10); }
+    &219  { @include aspect-ratio(21,  9); }
+    &-{
+      &golden {
+        @include aspect-ratio(16.18, 10);
+        &-portrait { @include aspect-ratio(10, 16.18); }
+      }
+      &square { @include aspect-ratio(1, 1); }
+    }
+  }
+}

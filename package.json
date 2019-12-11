@@ -1,0 +1,80 @@
+{
+  "name": "simple-react-redux-edetailer",
+  "productName": "eDetailer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "eDetailer",
+  "author": "George Apopei",
+  "build": {
+    "appId": "com.DBpx.edetailer",
+    "copyright": "© George Apopei",
+    "artifactName": "${name}_setup.${ext}",
+    "extraFiles": [
+      {
+        "from": "./public",
+        "to": "./",
+        "filter": [
+          "config.json"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "icon": "./public/favicon.ico"
+    }
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cross-env": "^6.0.3",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-is-dev": "^1.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.2.0",
+    "react-slick": "^0.25.2",
+    "redux": "^4.0.4",
+    "redux-starter-kit": "^0.8.1",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^4.4.0"
+  },
+  "scripts": {
+    "react-start": "rescripts start",
+    "react-build": "rescripts build",
+    "react-test": "rescripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently -k --kill-others-on-fail \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/rescript-env": "^0.0.11",
+    "concurrently": "^5.0.0",
+    "electron": "^6.1.0",
+    "electron-builder": "^21.2.0",
+    "wait-on": "^3.3.0"
+  }
+}

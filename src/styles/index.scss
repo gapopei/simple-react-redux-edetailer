@@ -1,0 +1,23 @@
+@import 'mixins/reset';
+@import 'mixins/grid';
+@import 'mixins/aspect-ratio';
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+}
